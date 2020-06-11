@@ -8,9 +8,16 @@ namespace networking_with_dotnetcore
     {
         static void Main(string[] args)
         {
-            var simpleUri = Uri.GetSimpleUri();
-            Console.WriteLine(simpleUri.ToString());
-            Thread.Sleep(10000);
+            // Generate a syntatcially correct URL
+            // var simpleUri = Uri.GetSimpleUri();
+            // Console.WriteLine(simpleUri.ToString());
+            
+            // List IP Addressed
+            var domainEntry = Dns.GetHostEntry("google.com");
+            foreach(var ip in domainEntry.AddressList){
+                Console.WriteLine(ip);
+            }
+            Thread.Sleep(1000);
         }
     }
 }
